@@ -1,6 +1,6 @@
 ### Token Mining Pool  
 
-Developed by the 0xBitcoin Community
+Developed by the 0xBitcoin Community, Mike.rs and SEDO TEAM (sedocoin.org)
 
 (GNU PUBLIC LICENSE)
 
@@ -29,8 +29,8 @@ CSS Colors: https://flatuicolors.com/palette/au
 
 
 ### HOW TO USE
-1. Point a poolminer at your pool using http://localhost:8586  (or ipaddress:8586 or domain.com:8586)  (make sure firewall allows this port)
-2. View website interface at http://localhost:3000 (you can set up nginx to serve the static files in /public)
+1. Point a poolminer at your pool using http://localhost:8080 (or ipaddress:8080 or domain.com:8080)  (make sure firewall allows this port)
+2. View website interface at http://localhost:80 (or 3000) (you can set up nginx to serve the static files in /public)
 
 
 ## Installing Redis  
