@@ -1,7 +1,7 @@
-
-var INFURA_ROPSTEN_URL = 'https://ropsten.infura.io/gmXEVo5luMPUGPqg6mhy';
-var INFURA_MAINNET_URL = 'https://mainnet.infura.io/gmXEVo5luMPUGPqg6mhy';
-
+//var INFURA_ROPSTEN_URL = 'https://ropsten.infura.io/gmXEVo5luMPUGPqg6mhy';
+//var INFURA_MAINNET_URL = 'https://mainnet.infura.io/gmXEVo5luMPUGPqg6mhy';
+var INFURA_ROPSTEN_URL = 'https://ropsten.infura.io/f12d6274997840158b99b418f0ed8ec1';
+var INFURA_MAINNET_URL = 'https://ropsten.infura.io/f12d6274997840158b99b418f0ed8ec1';
 
 var https_enabled = process.argv[2] === 'https';
 var pool_env = 'production';

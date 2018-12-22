@@ -6,7 +6,7 @@ import json
 from multi_pay_contract import Multisend
 total_balance = 0
 
-r = redis.Redis(host='10.142.0.4')
+r = redis.Redis(host='127.0.0.1')
 
 addresses = [] 
 payouts = []
@@ -14,7 +14,7 @@ sent_transactions = {}
 
 sender = Multisend()
 
-payout_addresses = set([b'0xF13e2680a930aE3a640188afe0F94aFCeBe7023b'])
+payout_addresses = set([b'0x60840139BcDF5C349Bb902c21E2A1FcF655a1291'])
 addresses = []
 
 print(addresses)
@@ -41,6 +41,7 @@ for pubkey in r.hgetall("miner_data"):
             merc.append([ Web3.toChecksumAddress(pubkey.decode()), balance, pubkey])
             total_balance += balance
             continue
+          print("minerData: ", minerData)
           addresses.append(Web3.toChecksumAddress(pubkey.decode()))
           sent_transactions[pubkey.decode()] = balance
           total_balance += balance

@@ -72,8 +72,8 @@ export default class ProfileRenderer {
 
 
      data.address = minerAddress;
-     data.etherscanURL = 'https://etherscan.io/token/0xb6ed7644c69416d67b522e20bc294a9a9b405b31?a=' + minerAddress.toString();
-
+//     data.etherscanURL = 'https://ropsten.etherscan.io/token/0xb6ed7644c69416d67b522e20bc294a9a9b405b31?a=' + minerAddress.toString();
+      data.etherscanURL = 'https://etherscan.io/token/0x0F00f1696218EaeFa2D2330Df3D6D1f94813b38f?a=' + minerAddress.toString();
       data.tokensAwardedFormatted = self.formatTokenQuantity(data.tokensAwarded);
       data.tokenBalanceFormatted = self.formatTokenQuantity(data.tokenBalance);
       data.hashRateFormatted = renderUtils.formatHashRate(data.hashRate);
@@ -146,8 +146,8 @@ export default class ProfileRenderer {
       })
 
     });
-
-    this.socket.on('minerInvalidShares', function (data) {
+	
+	this.socket.on('minerInvalidShares', function (data) {
 
       console.log('got minerInvalidShares')
       console.dir(data);
@@ -276,8 +276,8 @@ export default class ProfileRenderer {
         },
       },
     })
-
-    minerInvalidSharesList = new Vue({
+	
+	minerInvalidSharesList = new Vue({
       el: '#minerInvalidSharesList',
       data: {
         shares: {
@@ -304,15 +304,12 @@ export default class ProfileRenderer {
     this.socket.emit('getMinerSubmittedShares', {
       address: minerAddress
     });
-
     this.socket.emit('getMinerInvalidShares', {
       address: minerAddress
     });
-    this.socket.emit('getMinerRewards', {
+	this.socket.emit('getMinerRewards', {
       address: minerAddress
     });
-
-
 
 
   }
@@ -345,10 +342,10 @@ export default class ProfileRenderer {
     this.socket.emit('getMinerInvalidShares', {
       address: minerAddress
     });
-    this.socket.emit('getMinerRewards', {
+	this.socket.emit('getMinerRewards', {
       address: minerAddress
     });
-
+	
   }
 
   formatTime(time) {
@@ -366,7 +363,8 @@ export default class ProfileRenderer {
 
 ethBlockNumberToDateStr(eth_block) {
   var block_data = new Date("Mon Apr 30 2018 7:00:23 GMT-0400 (EDT)");
-  var latest_eth_block = 5532002;
+//  var latest_eth_block = 4421469;
+  var latest_eth_block = 6697106;
   return new Date(Date.now() - ((latest_eth_block - eth_block)*15*1000)).toLocaleString()
 }
 

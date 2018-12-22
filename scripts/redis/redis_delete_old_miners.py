@@ -32,7 +32,7 @@ def inspect(miner_hash):
     delete(miner, miner_hash)
 
 
-r = redis.Redis(host='10.142.0.4')
+r = redis.Redis(host='127.0.0.1')
 miners = r.hgetall("miner_data")
 for miner_hash in miners:
   try:

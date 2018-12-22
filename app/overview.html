@@ -7,29 +7,38 @@
     <%= require('html-loader!./assets/html/head.html') %>
 
   </head>
-  <body>
-
-        <%= require('html-loader!./assets/html/navbar.html') %>
-
+<body class="theme-muscari">
+    <%= require('html-loader!./assets/html/navbar.html') %>
+	<section class="vc_rows wpb_row vc_row-fluid section-bg-muscari banner-tokensale d-flex align-items-center mobile-center tab-center vc_row-o-equal-height vc_row-o-content-middle vc_row-flex banner banner-full d-flex align-items-center">
+		<div class="section-bg-angle" >
+			<div class="overlay-bubble">
+				<div class="overlay-bubble-1"></div>
+				<div class="overlay-bubble-2"></div>
+				<div class="overlay-bubble-3"></div>
+				<div class="overlay-bubble-4"></div>
+				<div class="overlay-bubble-5"></div>
+				<div class="overlay-bubble-6"></div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="banner-content"></div>
+		</div>
+		<div class="clearfix"></div>
+	</section>
 
 <div class="page-container  slate-theme" id="overview">
 
       <section class="hero">
         <div class="hero-body">
           <div class="container has-text-centered">
-            <h1 class="title font-primary-title color-primary">
+            <h1 class="title font-primary-title">
               Server Overview
             </h1>
             <h2 class="subtitle">
              Token Mining Pool
             </h2>
 
-
-
              <div class="whitespace-sm"></div>
-
-
-
 
         </div>
       </section>
@@ -38,8 +47,8 @@
         <div class='subtitle'>Pool Config</div>
       <table class='table '>
       <tbody>
-        <tr> <td> Minting Gas Price: {{ pool.poolConfig.solutionGasPriceWei }} </td> </tr>
-        <tr> <td> Transfer Gas Price: {{  pool.poolConfig.transferGasPriceWei }}  </td> </tr>
+        <tr> <td> Minting Gas Price limit: {{ pool.poolConfig.solutionGasPriceWei }} </td> </tr>
+        <!--<tr> <td> Transfer Gas Price: {{  pool.poolConfig.transferGasPriceWei }}  </td> </tr> -->
         <tr> <td> Transfer Minimum Balance:  {{  pool.poolConfig.minBalanceForTransfer / 1E8 }}</td></tr>
         <tr> <td> Minimum Share Difficulty:  {{  pool.poolConfig.minimumShareDifficulty }}</td></tr>
         <tr> <td> Fee %:  {{ pool.poolConfig.poolTokenFee }} </td> </tr>
@@ -294,26 +303,6 @@
           </table>
 
         </div>
-
-
-
-
-      <div id="about" class="box  background-secondary has-text-centered">
-
-        <div class='title'> Token Mining Pool </div>
-        <div class='subtitle '> Mine Ethereum tokens distributed using Proof of Work </div>
-
-
-        <div class="">
-
-        </div>
-
-        <div class="">
-          <p> Read more on <a href="https://reddit.com/r/tokenmining" target="_blank"> Reddit </a> </p>
-
-
-        </div>
-      </div>
 
 
   </div>

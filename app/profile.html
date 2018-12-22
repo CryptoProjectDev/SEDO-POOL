@@ -10,17 +10,31 @@
 
 </head>
 
-<body>
-  </script>
+<body  class="theme-muscari">
   <%= require('html-loader!./assets/html/navbar.html') %>
-
+	<section class="vc_rows wpb_row vc_row-fluid section-bg-muscari banner-tokensale d-flex align-items-center mobile-center tab-center vc_row-o-equal-height vc_row-o-content-middle vc_row-flex banner banner-full d-flex align-items-center">
+		<div class="section-bg-angle" >
+			<div class="overlay-bubble">
+				<div class="overlay-bubble-1"></div>
+				<div class="overlay-bubble-2"></div>
+				<div class="overlay-bubble-3"></div>
+				<div class="overlay-bubble-4"></div>
+				<div class="overlay-bubble-5"></div>
+				<div class="overlay-bubble-6"></div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="banner-content"></div>
+		</div>
+		<div class="clearfix"></div>
+	</section>
 
     <div class="page-container slate-theme " id="profile">
 
       <section class="hero">
         <div class="hero-body">
           <div class="container has-text-centered">
-            <h1 class="title font-primary-title color-primary">
+            <h1 class="title font-primary-title">
               Miner Profile
             </h1>
             <h2 class="subtitle">
@@ -32,6 +46,7 @@
 
 
           </div>
+		  </div>
       </section>
 
 
@@ -56,8 +71,8 @@
     <div class="card">
       <div class="card-body text-center">
         <h2 class="card-title">Effective Poolside Hashrate</h2>
-        <h4 class="card-text btn bitcoin-color" style='font-size:24px' v-cloak>
-        {{  miner.minerData.hashRateFormatted }}
+        <h4 class="card-text btn bitcoin-color" style='font-size:24px' v-cloak> <font color="white">
+        {{  miner.minerData.hashRateFormatted }} </font>
         </h4>
       </div>
     </div>
@@ -66,8 +81,8 @@
     <div class="card">
       <div class="card-body text-center">
         <h2 class="card-title">Accumulated Shares This Block</h2>
-        <h4 class="card-text btn bitcoin-color" style='font-size:24px' v-cloak>
-        {{ miner.minerData.shareCredits / 65536 }} 
+        <h4 class="card-text btn bitcoin-color" style='font-size:24px' v-cloak><font color="white">
+        {{ miner.minerData.shareCredits / 65536 }} </font>
         </h4>
       </div>
     </div>
@@ -75,9 +90,9 @@
   <div class="col-sm-3">
     <div class="card">
       <div class="card-body text-center">
-        <h2 class="card-title">Unpaid 0xBitcoin Balance</h2>
-        <h4 class="card-text btn bitcoin-color" style='font-size:24px' v-cloak> 
-        {{  miner.minerData.tokenBalanceFormatted }}  
+        <h2 class="card-title">Unpaid SEDO Balance</h2>
+        <h4 class="card-text btn bitcoin-color" style='font-size:24px' v-cloak> <font color="white">
+        {{  miner.minerData.tokenBalanceFormatted }}  </font>
         </h4>
       </div>
     </div>
@@ -85,9 +100,9 @@
   <div class="col-sm-3">
     <div class="card">
       <div class="card-body text-center">
-        <h2 class="card-title">Total 0xBitcoin Paid Out</h2>
-        <h4 class="card-text btn bitcoin-color" style='font-size:24px' v-cloak>
-        {{ miner.minerData.tokensAwardedFormatted }}
+        <h2 class="card-title">Total SEDO Paid Out</h2>
+        <h4 class="card-text btn bitcoin-color" style='font-size:24px' v-cloak><font color="white">
+        {{ miner.minerData.tokensAwardedFormatted }}</font>
         </h4>
       </div>
     </div>
@@ -214,10 +229,10 @@
                 <td> Your Shares </td>
                 <td> Total Pool Shares </td>
                 <td> Your Percent of Pool Shares </td>
-                <td> Your 0xBitcoin Reward</td>
+                <td> Your SEDO Reward</td>
                 <td> Previous Unpaid Balance </td>
                 <td> New Unpaid balance </td>
-                <td> Total 0xBitcoin Paid out</td>
+                <td> Total SEDO Paid out</td>
               </tr>
             </thead>
             <tbody>
@@ -234,21 +249,6 @@
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
-
-
-
-      <div id="about" class="box background-secondary has-text-centered">
-        <div class="whitespace-sm"></div>
-
-
-        <div class="">
-          <p> Read more on
-            <a href="https://reddit.com/r/tokenmining" target="_blank"> Reddit </a>
-          </p>
-
-
         </div>
       </div>
 

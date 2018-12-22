@@ -6,14 +6,14 @@ import json
 from multi_pay_contract import Multisend
 total_balance = 0
 
-r = redis.Redis(host='10.142.0.4')
+r = redis.Redis(host='127.0.0.1')
 
 addresses = [] 
 payouts = []
 sent_transactions = {}
 
 sender = Multisend()
-payout_addresses = [b'0x53Eb47Ab9CE1e70D33BC8EDa730A187a262ac734']
+payout_addresses = [b'0x60840139BcDF5C349Bb902c21E2A1FcF655a1291']
 addresses = []
 payout_min = 1
 

@@ -6,7 +6,7 @@ import datetime
 import json
 import time
 now = time.time()
-r = redis.StrictRedis(host='10.142.0.4')
+r = redis.StrictRedis(host='127.0.0.1')
 
 key = "submitted_share"
 for hkey in r.hkeys(key):

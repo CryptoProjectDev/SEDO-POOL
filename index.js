@@ -1,6 +1,6 @@
-
-var INFURA_ROPSTEN_URL = 'https://ropsten.infura.io/gmXEVo5luMPUGPqg6mhy';
-var INFURA_MAINNET_URL = 'https://mainnet.infura.io/gmXEVo5luMPUGPqg6mhy';
+var web3Utils = require('web3-utils')
+var INFURA_ROPSTEN_URL = 'https://ropsten.infura.io/f12d6274997840158b99b418f0ed8ec1';
+var INFURA_MAINNET_URL = 'https://mainnet.infura.io/f12d6274997840158b99b418f0ed8ec1';
 
 
 var https_enabled = process.argv[2] === 'https';
@@ -131,7 +131,16 @@ async function init(web3)
 */
 async function init(web3)
 {
-      // Code to run if we're in the master process
+      
+//	   var gas = await web3.eth.getGasPrice()*4;
+//           console.log('gas price from network',gas);
+//	   var cfgGas = poolConfig.solutionGasPriceWei*1000000000;
+//	   console.log('gas price from pool config',cfgGas);
+//	   if(gas > cfgGas)  gas = cfgGas;
+//	   console.log('optimized gas price',gas);
+	  
+
+// Code to run if we're in the master process
       if (cluster.isMaster) {
 
           // Create a worker for each CPU
@@ -140,6 +149,8 @@ async function init(web3)
           }
 
 
+	
+
            await redisInterface.init()
            await webInterface.init(web3,accountConfig,poolConfig,redisInterface)
            await tokenInterface.init(redisInterface,web3,accountConfig,poolConfig,pool_env)
@@ -147,8 +158,13 @@ async function init(web3)
            await diagnosticsManager.init(redisInterface,webInterface,peerInterface)
 
            await webServer.init(https_enabled,webInterface,peerInterface)
+	   
+ 	   peerInterface.update();  //16.18.2018 -> https://github.com/snissn/tokenpool/commit/adf465675e58507dc4e082fa8be0045f8274f4af	
 
-            peerInterface.update();
+	   
+
+
+
 
       // Code to run if we're in a worker process
       } else {

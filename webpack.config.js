@@ -32,7 +32,7 @@ var webpackPlugins = [
 
 const routesData = {
   routes: [
-    {url: '/', title: 'Mikers Mining Pool', template: 'app/index.html', filename: 'index.html'},
+    {url: '/', title: 'S.E.D.O. &#8211; Pool', template: 'app/index.html', filename: 'index.html'},
     {url: '/account', title: 'Mining Accounts', template: 'app/account.html', filename: 'account/index.html'},
     {url: '/profile/:address', title: 'Mining Profile', template: 'app/profile.html', filename: 'profile/index.html'},
     {url: '/overview', title: 'Overview', template: 'app/overview.html', filename: 'overview/index.html'},
